@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #ffffff;
+  --text: #111827;
+  --card: #ffffff;
+  --primary: #ff3f6c; /* Myntra pink */
+}
+
+.dark {
+  --bg: #0b0b0f;
+  --text: #f9fafb;
+  --card: #141418;
+  --primary: #ff3f6c;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: Inter, system-ui, sans-serif;
+}
