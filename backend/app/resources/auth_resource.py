@@ -4,6 +4,7 @@ from app.models.user import User
 from app.extensions import db
 from flask_jwt_extended import create_access_token
 
+
 class RegisterResource(Resource):
     def post(self):
         data = request.get_json()
@@ -19,7 +20,8 @@ class RegisterResource(Resource):
         # 3️⃣ Create user
         user = User(
             name=data.get("name"),
-            email=data["email"]
+            email=data["email"],
+            role="USER"   # ✅ important
         )
         user.set_password(data["password"])
 
@@ -28,7 +30,7 @@ class RegisterResource(Resource):
         db.session.commit()
 
         return {"message": "User registered successfully"}, 201
-    
+
 
 class LoginResource(Resource):
     def post(self):
@@ -43,7 +45,7 @@ class LoginResource(Resource):
         token = create_access_token(
             identity=str(user.id),
             additional_claims={
-                "role": user.role  # e.g. "ADMIN" or "USER"
+                "role": user.role
             }
         )
 

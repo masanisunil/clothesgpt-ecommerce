@@ -3,7 +3,7 @@ import { loginUser } from "../api/auth.api";
 import { useNavigate, Navigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { motion } from "framer-motion";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -34,12 +34,8 @@ export default function Login() {
           alt="fashion"
         />
         <div className="relative text-white text-center px-10">
-          <h1 className="text-4xl font-bold mb-4">
-            Welcome to CLOTHESGPT
-          </h1>
-          <p className="opacity-90">
-            Discover fashion that defines you
-          </p>
+          <h1 className="text-4xl font-bold mb-4">Welcome to CLOTHESGPT</h1>
+          <p className="opacity-90">Discover fashion that defines you</p>
         </div>
       </div>
 
@@ -49,10 +45,7 @@ export default function Login() {
           animate={{ opacity: 1, y: 0 }}
           className="w-full max-w-md"
         >
-          <h2 className="text-2xl font-semibold mb-2">
-            Login
-          </h2>
-          
+          <h2 className="text-2xl font-semibold mb-2">Login</h2>
 
           <div className="space-y-5">
             <input
@@ -68,7 +61,7 @@ export default function Login() {
               className="w-full border px-4 py-3"
               onChange={(e) => setPassword(e.target.value)}
             />
-             {/* <Link to="/login/sms">Login with Mobile OTP</Link> */}
+            {/* <Link to="/login/sms">Login with Mobile OTP</Link> */}
 
             <button
               onClick={handleLogin}
@@ -76,8 +69,12 @@ export default function Login() {
             >
               LOGIN
             </button>
-           
-
+            <p className="text-sm text-gray-500 mt-6">
+              New to FashionX?{" "}
+              <Link to="/register" className="text-[var(--primary)]">
+                Create account
+              </Link>
+            </p>
           </div>
         </motion.div>
       </div>

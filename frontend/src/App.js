@@ -19,6 +19,9 @@ import { AnimatePresence } from "framer-motion";
 import Footer from "./components/Footer";
 import BackToTop from "./components/BackToTop";
 import SmsOtpLogin from "./pages/SmsOtpLogin";
+import Register from "./pages/Register";
+
+
 
 
 
@@ -40,6 +43,8 @@ function App() {
           }
         />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+
         <Route path="/product/:id" element={<ProductDetails />} />
         <Route
           path="/checkout"
